@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>绝缘耐压测试数据库测试数据</title>
+</head>
+<body>
+<?php
+
+$host='localhost';
+$user='root';
+$password='jczx';
+$db='jczx_mysql_db';
+
+$conn=mysqli_connect($host,$user,$password,$db)
+   or die('could not connect:'. mysqli_connect_error());
+echo "connect host <strong>".$host."</strong> successfully<br />";
+
+mysqli_select_db($conn,$db) or die ('could not select database <strong>'.$db.'</strong>');
+
+echo 'select database <strong>'.$db.'</strong> successfully';
+
+$query='select * from laiyatest';
+$result=mysqli_query($conn,$query) or die ("query failed..." . mysqli_connect_error());
+
+
+echo "<table border='1' width='1100'>\n";
+$count=0;
+
+ echo "\t<tr>\n";
+
+       echo "\t\t<td>测试时间</td><td>SN</td><td>测试结果</td><td>电压1</td><td>电流</td><td>时间1</td>
+	   <td>电压2</td><td>电阻</td><td>时间2</td><td>上传服务器时间</td><td>备注</td>\n";
+
+ echo "\t</tr>\n";
+
+while ($line=mysqli_fetch_array($result))
+{
+   echo "\t<tr>\n";
+
+       echo "\t\t<td>$line[1]</td>
+	   <td>$line[2]</td>
+	   <td>$line[3]</td>
+	   <td>$line[4]</td>
+	   <td>$line[5]</td>
+	   <td>$line[6]</td>
+	   <td>$line[7]</td>
+	   <td>$line[8]</td>
+	   <td>$line[9]</td>
+	   <td>$line[10]</td>
+	   <td>$line[11]</td>
+	   \n";
+    
+   $count++;
+   echo "\t</tr>\n";
+}
+echo "</table>\n";
+
+if ($count<1)
+  {
+      echo "<br><br>No rows were found in this table.<br><br>";
+   }
+  else
+   {
+   echo "$count rows were found in this table";
+   }
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+?>
+
+</body>

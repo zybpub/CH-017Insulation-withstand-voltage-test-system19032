@@ -1,0 +1,65 @@
+﻿设置root用户密码:
+set password =password('jczx');
+
+建库：
+CREATE DATABASE IF NOT EXISTS `jczx_mysql_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `jczx_mysql_db`;
+
+建测试数据表
+CREATE TABLE `jyny_testdatav3` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `WORKSTATIONID` varchar(100) DEFAULT NULL,
+ `testdatetime` varchar(200) DEFAULT NULL COMMENT '测试时间',
+ `MO` varchar(100) DEFAULT NULL,
+ `SN` varchar(200) DEFAULT NULL COMMENT '产品序列号',
+ `SOFT_VER` varchar(20) NOT NULL,
+ `ACW_RESULT` varchar(50) DEFAULT NULL,
+ `ACW_VOL` varchar(20) DEFAULT NULL,
+ `ACW_CUR` varchar(20) DEFAULT NULL,
+ `ACW_TIME` varchar(20) DEFAULT NULL,
+ `IR_RESULT` varchar(50) DEFAULT NULL,
+ `IR_VOL` varchar(20) DEFAULT NULL,
+ `IR_RES` varchar(20) DEFAULT NULL,
+ `IR_TIME` varchar(20) DEFAULT NULL,
+ `TEST_TIMES` varchar(10) DEFAULT NULL,
+ `RESULT` varchar(200) DEFAULT NULL COMMENT '测试结果',
+ `uploaddatetime` datetime DEFAULT NULL COMMENT '上传服务器时间',
+ `memo` varchar(200) DEFAULT NULL COMMENT '备注',
+ `mesreply` varchar(500) DEFAULT NULL,
+ `ERROR_CODE` varchar(100) DEFAULT NULL,
+ `ERROR_SPOT` varchar(100) DEFAULT NULL,
+ `operator` varchar(50) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=333 DEFAULT CHARSET=utf8
+
+建生产统计表
+CREATE TABLE `tongji_jyny` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `testdate` varchar(100) DEFAULT NULL,
+ `first_pass_num` int(11) DEFAULT '0',
+ `first_pass_rate` varchar(100) DEFAULT '0',
+ `pass_num` int(11) DEFAULT '0',
+ `pass_rate` varchar(100) DEFAULT '0',
+ `faulttest_num` int(11) DEFAULT '0',
+ `faulttest_rate` varchar(100) DEFAULT '0',
+ `ng_num` int(11) DEFAULT '0',
+ `ng_rate` varchar(100) DEFAULT '0',
+ `memo` varchar(500) DEFAULT '0',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='测试统计'
+
+
+CREATE TABLE  if not exists  `system_info` (
+                             `id` int(11) NOT NULL AUTO_INCREMENT,
+                             `soft_ver` varchar(200) DEFAULT NULL,
+                             `database_ver` varchar(200) DEFAULT NULL,
+                             `update_time` datetime DEFAULT NULL,
+                             `memo` varchar(2000) DEFAULT NULL,
+                             PRIMARY KEY (`id`)
+                            ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='系统信息';
+                                insert into `system_info` (database_ver,update_time) values('4.0',now());
+
+ALTER TABLE `jyny_testdatav3` add COLUMN  `GB_RESULT` varchar(50) DEFAULT NULL;
+ALTER TABLE `jyny_testdatav3` add COLUMN  `GB_CUR` varchar(20) DEFAULT NULL;
+ALTER TABLE `jyny_testdatav3` add COLUMN `GB_RES` varchar(20) DEFAULT NULL;
+ALTER TABLE `jyny_testdatav3` add COLUMN  `GB_TIME` varchar(20) DEFAULT NULL

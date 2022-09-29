@@ -1,0 +1,37 @@
+﻿CREATE TABLE `user_admin` (
+ `id` int(5) NOT NULL AUTO_INCREMENT,
+ `name` varchar(50) NOT NULL,
+ `pass` varchar(50) NOT NULL,
+ `memo` varchar(50) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='超级管理员'
+
+INSERT INTO `user_admin` (`name`, `pass`, `memo`) VALUES
+('admin', 'admin', '超级管理员');
+
+CREATE TABLE `user_operater` (
+ `id` int(5) NOT NULL AUTO_INCREMENT,
+ `name` varchar(50) NOT NULL,
+ `pass` varchar(50) NOT NULL,
+ `memo` varchar(50) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='操作工'
+
+INSERT INTO `user_operater` ( `name`, `pass`, `memo`) VALUES
+('op', 'op', '操作工');
+
+CREATE TABLE `user_technician` (
+ `id` int(5) NOT NULL AUTO_INCREMENT,
+ `name` varchar(50) NOT NULL,
+ `pass` varchar(50) NOT NULL,
+ `memo` varchar(50) DEFAULT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='工艺（修改设置）'
+
+INSERT INTO `user_technician` (`name`, `pass`, `memo`) VALUES
+('gy', 'gy', '工艺');
+
+CREATE TABLE  if not exists `user_login_log` ( `id` INT NOT NULL AUTO_INCREMENT , `login_user_type` VARCHAR(50) NOT NULL , `login_name` VARCHAR(50) NOT NULL , `login_datetime` DATETIME NOT NULL , PRIMARY KEY (`id`)) ENGINE = MyISAM;

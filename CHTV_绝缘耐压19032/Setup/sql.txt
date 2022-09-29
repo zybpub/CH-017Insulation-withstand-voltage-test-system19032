@@ -1,0 +1,25 @@
+﻿CREATE TABLE `jyny_仪表设置` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `名称` varchar(20) NOT NULL,
+ `交流耐压电压` varchar(20) NOT NULL,
+ `交流耐压漏电流最大值` varchar(20) NOT NULL,
+ `交流耐压漏电流最小值` varchar(20) NOT NULL,
+ `交流耐压漏电流修正值` varchar(20) NOT NULL,
+ `交流耐压测试时间` varchar(20) NOT NULL,
+ `交流耐压测试频率` varchar(20) NOT NULL,
+ `绝缘电阻电压` varchar(20) NOT NULL,
+ `绝缘电阻最大值` varchar(20) NOT NULL,
+ `绝缘电阻最小值` varchar(20) NOT NULL,
+ `绝缘电阻修正值` varchar(20) NOT NULL,
+ `绝缘电阻测试时间` varchar(20) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `jyny_机型设置` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `机型` varchar(50) NOT NULL,
+ `设置名称` varchar(50) NOT NULL,
+ `备注` varchar(500) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8
