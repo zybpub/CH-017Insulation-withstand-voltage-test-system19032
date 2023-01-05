@@ -582,7 +582,22 @@ namespace Test_Automation
             SerialPort.WriteLine(command);
             Device_Event.WaitOne();
             addmemo("收绝缘耐压计回复：" + test_result);
-            tb_acw_vol.Text = Convert.ToDouble(test_result).ToString();
+            try
+            {
+                tb_acw_vol.Text = Convert.ToDouble(test_result).ToString();
+            }
+            catch {
+                try
+                {
+                    tb_acw_vol.Text = Convert.ToDouble(test_result.Split('\n')[1].Trim()).ToString();
+                }
+                catch 
+                {
+                    addmemo("收绝缘耐压计回复数据不正确");
+                }
+               
+            }
+
 
 
             test_result = "";
