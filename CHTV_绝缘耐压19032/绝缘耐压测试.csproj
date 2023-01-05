@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Test_Automation</RootNamespace>
-    <AssemblyName>绝缘耐压测试%28Chroma19032%291.0.0.2</AssemblyName>
+    <AssemblyName>绝缘耐压测试%28Chroma19032%291.0.0.3</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

@@ -168,6 +168,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SOFT_VER = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
+            this.手动设置仪表自检测通过ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -287,7 +288,7 @@
             // 
             this.tc_softcode.Name = "tc_softcode";
             this.tc_softcode.Size = new System.Drawing.Size(51, 17);
-            this.tc_softcode.Text = "CH-005";
+            this.tc_softcode.Text = "CH-017";
             // 
             // menuStrip1
             // 
@@ -317,7 +318,8 @@
             this.初始化ToolStripMenuItem,
             this.deviceCheckToolStripMenuItem,
             this.启动测试ToolStripMenuItem,
-            this.调试ToolStripMenuItem});
+            this.调试ToolStripMenuItem,
+            this.手动设置仪表自检测通过ToolStripMenuItem});
             this.绝缘耐压仪测试ToolStripMenuItem.Name = "绝缘耐压仪测试ToolStripMenuItem";
             this.绝缘耐压仪测试ToolStripMenuItem.Size = new System.Drawing.Size(104, 21);
             this.绝缘耐压仪测试ToolStripMenuItem.Text = "绝缘耐压仪测试";
@@ -326,28 +328,28 @@
             // 初始化ToolStripMenuItem
             // 
             this.初始化ToolStripMenuItem.Name = "初始化ToolStripMenuItem";
-            this.初始化ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.初始化ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.初始化ToolStripMenuItem.Text = "初始化";
             this.初始化ToolStripMenuItem.Click += new System.EventHandler(this.初始化ToolStripMenuItem_Click);
             // 
             // deviceCheckToolStripMenuItem
             // 
             this.deviceCheckToolStripMenuItem.Name = "deviceCheckToolStripMenuItem";
-            this.deviceCheckToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.deviceCheckToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.deviceCheckToolStripMenuItem.Text = "Device_Check";
             this.deviceCheckToolStripMenuItem.Click += new System.EventHandler(this.deviceCheckToolStripMenuItem_Click);
             // 
             // 启动测试ToolStripMenuItem
             // 
             this.启动测试ToolStripMenuItem.Name = "启动测试ToolStripMenuItem";
-            this.启动测试ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.启动测试ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.启动测试ToolStripMenuItem.Text = "启动测试";
             this.启动测试ToolStripMenuItem.Click += new System.EventHandler(this.启动测试ToolStripMenuItem_Click);
             // 
             // 调试ToolStripMenuItem
             // 
             this.调试ToolStripMenuItem.Name = "调试ToolStripMenuItem";
-            this.调试ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.调试ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.调试ToolStripMenuItem.Text = "调试";
             this.调试ToolStripMenuItem.Click += new System.EventHandler(this.调试ToolStripMenuItem_Click);
             // 
@@ -1617,6 +1619,13 @@
             this.label34.TabIndex = 90;
             this.label34.Text = "适用于Chroma 19032-P";
             // 
+            // 手动设置仪表自检测通过ToolStripMenuItem
+            // 
+            this.手动设置仪表自检测通过ToolStripMenuItem.Name = "手动设置仪表自检测通过ToolStripMenuItem";
+            this.手动设置仪表自检测通过ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.手动设置仪表自检测通过ToolStripMenuItem.Text = "手动设置仪表自检测通过";
+            this.手动设置仪表自检测通过ToolStripMenuItem.Click += new System.EventHandler(this.手动设置仪表自检测通过ToolStripMenuItem_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1808,6 +1817,7 @@
         private System.Windows.Forms.TextBox tb_ir_time;
         private System.Windows.Forms.TextBox tb_acw_time;
         private System.Windows.Forms.ToolStripStatusLabel tc_softcode;
+        private System.Windows.Forms.ToolStripMenuItem 手动设置仪表自检测通过ToolStripMenuItem;
     }
 }
 

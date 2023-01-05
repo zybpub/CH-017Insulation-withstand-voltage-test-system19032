@@ -472,7 +472,7 @@ namespace Test_Automation
                     addmemo("绝缘耐压仪连接出错,请检查端口是否被占用!");
                     return false;
                 }
-
+                serial_inited = true;
                 if (false == Device_Check())
                 {
                     //addmemo("串口连接的不是绝缘耐压仪！");
@@ -1684,6 +1684,11 @@ namespace Test_Automation
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void 手动设置仪表自检测通过ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            serial_inited = true;
         }
     }
 }
